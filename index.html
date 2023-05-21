@@ -1,1 +1,196 @@
-Hola Mundo
+<!--Desarrollo de la tarea 3, usando CSS grid, SASS y git...
+Para ello, crearé un repositorio en Git para esta tarea... y enviaré los commits correspondientes
+usaré lo mismo de la tarea anterior en el sentido de modelamiento visual..
+el slider de bootstrap... con el correcto trabajo de redimensionar las imagenes-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <!--Bootstrap-->
+    <link
+      rel="stylesheet"
+      href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+      integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+      integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Tarea 3- GridLayout</title>
+  </head>
+  <body>
+    <!--Creo el layout con css grid, y la organización a grandes rasgos-->
+    <!--Entonces, uso la nomencalutra BEM para la creacion de un layout usando CSS grid-->
+    <!--Primero, creo el div contenedor principal y además los otros elementos del layout usando clases-->
+
+
+    <div class="layout">
+      <header class="layout__header">
+        <!--Como usaré SASS para la creación de estilos, y gracias a la anidación que esto ofrece.. no usare clases para las
+        imagenes contenidas-->
+        <img src="./MAKUNGA_DESIGN-01-01.png" alt="Logo" />
+      </header>
+
+      <!--acá el Nav-->
+      <nav class="layout__nav">
+        <p>Inicio</p>
+        <p>Aplicaciones</p>
+        <p>Servicios</p>
+        <p>Contacto</p>
+        <img src="./lupa.png" alt="lupa" />
+      </nav>
+
+      <!--Acá el Main-->
+      <main class="layout__main">
+        <!--El main solo contendrá un slider importado de Bootstrap-->
+        <div id="carouselExampleIndicators" class="carousel slide">
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                class="ImagenSlide"
+                src="https://images.unsplash.com/photo-1583508915901-b5f84c1dcde1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                class="ImagenSlide"
+                src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                class="ImagenSlide"
+                src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </main>
+
+      <!--Acá el Aside.. contendrá un breve mensaje de bienvenida-->
+
+      <aside class="layout__aside">
+        <h1>¡Bienvenido!</h1>
+        <p>
+          Somos una empresa líder en la industria de edición y diseño
+          publicitario. con una vasta experiencia y gran cantidad de clientes
+          satisfechos, esperamos otorgarle un servicio de calidad que se ajuste
+          a sus estandares.
+        </p>
+      </aside>
+
+      <!--Acá los pilares...-->
+
+      <div class="layout__pilares">
+        <!--Aca los pilares individuales, tres en total... contienen un texto y un icono -->
+        <div class="layout__pilares--pilar">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/8296/8296971.png"
+            alt="img1"
+            class="img--pilar"
+          />
+          <div>
+            <strong
+              ><span class="texto--pilar">
+                Contamos con software <br />actualizado
+              </span></strong
+            >
+          </div>
+        </div>
+
+        <div class="layout__pilares--pilar">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/10435/10435174.png"
+            alt="img2"
+            class="img--pilar"
+          />
+          <div>
+            <strong
+              ><span class="texto--pilar"
+                >Profesionales capacitados</span
+              ></strong
+            >
+          </div>
+        </div>
+
+        <div class="layout__pilares--pilar">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/1316/1316740.png"
+            alt="img2"
+            class="img--pilar"
+          />
+          <div>
+            <strong
+              ><span class="texto--pilar">Eficacia y Eficiencia</span></strong
+            >
+          </div>
+        </div>
+      </div>
+      <!--Footer... imagenes y algo de texto -->
+      <footer class="layout__footer">
+        <img
+          src="https://cdn.pixabay.com/photo/2021/02/08/15/44/social-media-5995266_1280.png"
+          alt="socialnetworks"
+          class="img--footer"
+        />
+        <p class="texto--footer">¡Siguenos!</p>
+        <p class="texto--footer">Información Legal</p>
+      </footer>
+    </div>
+  </body>
+</html>

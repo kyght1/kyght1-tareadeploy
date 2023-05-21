@@ -1,0 +1,268 @@
+@charset "UTF-8";
+/*Aca uso sass para la creacion de un css con coompilación*/
+/*declararé un uso de variables par ael color*/
+/*todo esto se compilará y dará un CSS style*/
+/*gainboro*/
+/*Ahora hago un diseño responsivo, suando la propiedad de grid llamada grid template area*/
+@media only screen and (max-width: 767px) {
+  * {
+    font-size: 2.5vw;
+  }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #dcdcdc;
+    /*Layout*/
+    /*estilo para header*/
+    /*estilo para main*/
+    /*estilo para nav*/
+    /*estilo para aside*/
+    /*Estilo de pilares*/
+    /*estilo de footer*/
+  }
+  body .layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 40px auto 1fr 250px 100px;
+    width: 100%;
+    /*uso grid templates area para distribuir los contenidos mara una web responsive*/
+    grid-template-areas: "head" "navv" "aside" "main" "pilares" "footer";
+  }
+  body .layout__header {
+    grid-area: head;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    background-color: #393646;
+  }
+  body .layout__header img {
+    align-self: center;
+    height: 100px;
+    padding: 16px;
+  }
+  body .layout__main {
+    grid-area: main;
+    display: flex;
+    background-color: #dcdcdc;
+  }
+  body .layout__main .ImagenSlide {
+    height: 1fr;
+    max-width: 100%;
+  }
+  body .layout__nav {
+    grid-area: navv;
+    display: flex;
+    height: 40px;
+    justify-content: space-around;
+    background-color: #4f4557;
+  }
+  body .layout__nav p {
+    display: flex;
+    color: #dcdcdc;
+    margin: auto;
+    padding: 11px;
+    flex: 1 0;
+    justify-content: center;
+  }
+  body .layout__nav p:hover {
+    background-color: #393646;
+  }
+  body .layout__nav img {
+    display: inline-flex;
+    align-self: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: 20px;
+    height: 30px;
+    width: 30px;
+  }
+  body .layout__aside {
+    grid-area: aside;
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: gainsboro;
+  }
+  body .layout__aside h1 {
+    display: inline-flex;
+    justify-content: center;
+  }
+  body .layout__aside p {
+    display: inline-flex;
+    font: Arial, Helvetica, sans-serif;
+    font-size: medium;
+  }
+  body .layout__pilares {
+    grid-area: pilares;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    background-color: #dcdcdc;
+  }
+  body .layout__pilares .layout__pilares--pilar {
+    display: flex;
+    flex: 1 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  body .layout__pilares .layout__pilares--pilar div {
+    text-align: center;
+  }
+  body .layout__pilares .layout__pilares--pilar .img--pilar {
+    height: 50px;
+    width: 50px;
+    align-self: center;
+  }
+  body .layout__pilares .layout__pilares--pilar .texto--pilar {
+    display: inline;
+    vertical-align: middle;
+    line-height: normal;
+  }
+  body .layout__footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: space-around;
+    background-color: #6d5d6e;
+  }
+  body .layout__footer .texto--footer {
+    color: #dcdcdc;
+    align-self: center;
+  }
+}
+/*Lo que esta aqui corresponde al diseño estandar para pagina de esscritorio...*/
+/*---------------------------
+----------------------------
+------------------------
+-------------------
+-------------
+-------
+--
+-*/
+@media only screen and (min-width: 768px) {
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #dcdcdc;
+    /*Estilo del layout con grid... se definen las columnas y filas*/
+    /*Estilos para el header*/
+    /*estilos de main*/
+    /*estilos de nav*/
+    /*estilos de aside*/
+    /*estilo de pilares*/
+    /*estilo de footer*/
+  }
+  body .layout {
+    display: grid;
+    grid-template-rows: 100px 40px 1fr 250px 100px;
+    grid-template-columns: 50% 50%;
+  }
+  body .layout__header {
+    display: flex;
+    justify-content: center;
+    grid-column: 1/span 2;
+    height: auto;
+    background-color: #393646;
+  }
+  body .layout__header img {
+    align-self: center;
+    height: 100px;
+    padding: 16px;
+  }
+  body .layout__main {
+    display: flex;
+    grid-area: 3/2/span 1/span 1;
+    background-color: #dcdcdc;
+  }
+  body .layout__main .ImagenSlide {
+    height: 1fr;
+    max-width: 100%;
+  }
+  body .layout__nav {
+    transition: background-color 0.5s;
+    grid-area: 2/1/span 1/span 2;
+    position: sticky;
+    display: flex;
+    height: 40px;
+    justify-content: space-around;
+    background-color: #4f4557;
+  }
+  body .layout__nav p {
+    display: flex;
+    color: #dcdcdc;
+    margin: auto;
+    padding: 8px;
+    flex: 1 0;
+    justify-content: center;
+  }
+  body .layout__nav p:hover {
+    background-color: #393646;
+  }
+  body .layout__nav img {
+    display: inline-flex;
+    align-self: center;
+    margin-left: 50px;
+    margin-right: 76px;
+    height: 30px;
+    width: 30px;
+  }
+  body .layout__aside {
+    display: inline-flex;
+    height: auto;
+    flex-direction: column;
+    justify-content: space-evenly;
+    grid-area: 3/1/4/span 1;
+    background-color: gainsboro;
+  }
+  body .layout__aside h1 {
+    display: inline-flex;
+    justify-content: center;
+  }
+  body .layout__aside p {
+    display: inline-flex;
+    font: Arial, Helvetica, sans-serif;
+    font-size: large;
+    margin: 20px;
+  }
+  body .layout__pilares {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    background-color: #dcdcdc;
+    grid-column: 1/3;
+  }
+  body .layout__pilares .layout__pilares--pilar {
+    display: flex;
+    flex: 1 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  body .layout__pilares .layout__pilares--pilar div {
+    text-align: center;
+  }
+  body .layout__pilares .layout__pilares--pilar .img--pilar {
+    height: 50px;
+    width: 50px;
+    align-self: center;
+  }
+  body .layout__pilares .layout__pilares--pilar .texto--pilar {
+    display: inline;
+    vertical-align: middle;
+    line-height: normal;
+  }
+  body .layout__footer {
+    display: flex;
+    justify-content: space-around;
+    grid-area: 5/1/span 1/span 2;
+    background-color: #6d5d6e;
+  }
+  body .layout__footer .texto--footer {
+    color: #dcdcdc;
+    align-self: center;
+  }
+  body .layout__footer .img--footer {
+    width: auto;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
